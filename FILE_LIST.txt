@@ -1,0 +1,16 @@
+./FILE_LIST.txt
+./README.md
+./docs/ASSET_MANIFEST.md
+./docs/CODEX_HANDOFF.md
+./docs/GAMEPLAY_CONFIG.md
+./docs/IMPLEMENTATION_PLAN.md
+./docs/OPEN_DECISIONS.md
+./reference_art/approved/blue_giant_primal_beast_character_sheet.png
+./reference_art/approved/energy_infantry_character_sheet.png
+./reference_art/approved/void_wyrm_shark_character_sheet.png
+./reference_art/approved/zenith_tower_character_sheet.png
+./reference_art/exploration/blue_giant_options.png
+./reference_art/exploration/blue_soldier_options.png
+./reference_art/exploration/red_dragon_megalodon_options.png
+./reference_art/exploration/simple_tower_options.png
+./reference_art/exploration/tower_selection_board.png

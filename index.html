@@ -1,0 +1,79 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#101820">
+  <title>Alien Tower Battle</title>
+  <link rel="preload" as="image" href="assets/alien-battlefield.png">
+  <link rel="preload" as="image" href="assets/blue-tower.png">
+  <link rel="preload" as="image" href="assets/red-tower.png">
+  <link rel="preload" as="image" href="assets/blue-giant.png">
+  <link rel="preload" as="image" href="assets/red-megalodon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game-canvas" aria-label="Alien battlefield"></canvas>
+    <header id="battle-hud" class="hidden" aria-label="Battle status">
+      <div class="faction-score blue-score"><span>BLUE</span><strong id="blue-towers">3</strong></div>
+      <div class="match-center"><strong id="match-time">0:00</strong><span id="match-status">BATTLE</span></div>
+      <div class="faction-score red-score"><strong id="red-towers">3</strong><span>RED</span></div>
+      <button id="pause-button" class="icon-button" type="button" aria-label="Pause game">II</button>
+    </header>
+    <section id="command-bar" class="hidden" aria-label="Battle controls">
+      <div id="selection-readout">
+        <strong id="selection-title">No unit selected</strong>
+        <span id="status">Tap a blue tower, or tap an enemy to issue an attack order.</span>
+      </div>
+      <div class="battle-actions">
+        <button id="deploy-button" type="button" disabled>Deploy Soldier</button>
+        <button id="special-button" type="button" disabled>Giant Locked</button>
+        <button id="shield-button" class="shield-ready" type="button">Shield <span id="shield-count">3</span></button>
+      </div>
+    </section>
+    <section id="main-menu" class="screen-overlay" aria-labelledby="game-title">
+      <div class="menu-content">
+        <p class="eyebrow">TACTICAL DEFENSE</p>
+        <h1 id="game-title">ALIEN TOWER<br>BATTLE</h1>
+        <p class="menu-copy">Command three towers. Redirect their fire, deploy infantry, and time your shield to destroy the enemy base.</p>
+        <p class="picker-label">Choose your faction</p>
+        <div class="team-picker" role="group" aria-label="Player faction">
+          <button class="team-choice blue-team selected" data-team="blue" type="button">Blue - Giant</button>
+          <button class="team-choice red-team" data-team="red" type="button">Red - Megalodon</button>
+        </div>
+        <p class="picker-label">Difficulty</p>
+        <div class="difficulty-picker" role="group" aria-label="Difficulty">
+          <button class="difficulty" data-difficulty="easy" type="button">Easy</button>
+          <button class="difficulty selected" data-difficulty="medium" type="button">Medium</button>
+          <button class="difficulty" data-difficulty="hard" type="button">Hard</button>
+        </div>
+        <button id="start-button" class="primary-action" type="button">Start Battle</button>
+      </div>
+    </section>
+    <section id="pause-menu" class="screen-overlay hidden" aria-labelledby="pause-title">
+      <div class="dialog-panel">
+        <p class="eyebrow">BATTLE SUSPENDED</p>
+        <h2 id="pause-title">Paused</h2>
+        <button id="resume-button" class="primary-action" type="button">Resume</button>
+        <button class="menu-button" type="button">Main Menu</button>
+      </div>
+    </section>
+    <section id="result-menu" class="screen-overlay hidden" aria-labelledby="result-title">
+      <div class="dialog-panel">
+        <p id="result-kicker" class="eyebrow">BATTLE COMPLETE</p>
+        <h2 id="result-title">Victory</h2>
+        <p id="result-detail">Enemy tower network destroyed.</p>
+        <button id="restart-button" class="primary-action" type="button">Battle Again</button>
+        <button class="menu-button" type="button">Main Menu</button>
+      </div>
+    </section>
+    <aside id="debug-panel" class="hidden" aria-label="Battle telemetry">
+      <span id="debug-units">Units 6</span>
+      <span id="debug-projectiles">Shots 0</span>
+      <span id="debug-damage">Damage 0</span>
+    </aside>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
