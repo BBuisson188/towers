@@ -1,12 +1,12 @@
 ﻿:root { color-scheme: dark; --ink:#eef8ff; --muted:#a8bdc8; --panel:rgba(10,19,25,.88); --panel-soft:rgba(10,19,25,.72); --blue:#34c5ff; --red:#ff574f; --gold:#ffd56a; }
 * { box-sizing:border-box; }
 html,body { width:100%; height:100%; margin:0; overflow:hidden; background:#101820; color:var(--ink); font-family:"Segoe UI",Arial,sans-serif; touch-action:none; -webkit-user-select:none; user-select:none; }
-button { appearance:none; min-height:48px; border:1px solid rgba(255,255,255,.2); border-radius:7px; padding:0 18px; background:rgba(18,31,39,.94); color:var(--ink); font:700 15px/1 "Segoe UI",Arial,sans-serif; letter-spacing:0; cursor:pointer; }
+button { appearance:none; min-height:48px; border:1px solid rgba(255,255,255,.2); border-radius:7px; padding:0 18px; background:rgba(18,31,39,.94); color:var(--ink); font:700 15px/1 "Segoe UI",Arial,sans-serif; letter-spacing:0; cursor:pointer; touch-action:manipulation; -webkit-tap-highlight-color:transparent; }
 button:active:not(:disabled) { transform:translateY(1px); }
 button:disabled { opacity:.38; cursor:default; }
 .hidden { display:none!important; }
 #game-shell { position:relative; width:100vw; height:100dvh; min-height:420px; overflow:hidden; background:#7fc9f2; }
-#game-canvas { display:block; width:100%; height:100%; }
+#game-canvas { display:block; width:100%; height:100%; touch-action:none; }
 #battle-hud { position:absolute; top:max(10px,env(safe-area-inset-top)); left:max(12px,env(safe-area-inset-left)); right:max(12px,env(safe-area-inset-right)); display:grid; grid-template-columns:minmax(90px,1fr) auto minmax(90px,1fr) 48px; align-items:center; gap:8px; pointer-events:none; }
 .faction-score,.match-center,.icon-button { height:48px; background:var(--panel-soft); border:1px solid rgba(255,255,255,.16); backdrop-filter:blur(7px); }
 .faction-score { display:flex; align-items:center; gap:12px; max-width:230px; padding:0 15px; border-radius:7px; font-size:12px; font-weight:800; }
