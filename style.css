@@ -41,6 +41,7 @@ h2 { margin:0 0 12px; font-size:44px; letter-spacing:0; }
 .difficulty { flex:1; }
 .difficulty.selected { border-color:var(--blue); background:rgba(35,132,171,.55); }
 .primary-action { width:100%; min-height:56px; border-color:rgba(52,197,255,.8); background:#167da8; font-size:17px; }
+.test-level-action { width:100%; margin-top:9px; }
 .dialog-panel { width:min(390px,100%); padding:28px; border-radius:8px; background:var(--panel); border:1px solid rgba(255,255,255,.2); text-align:center; }
 .dialog-panel p:not(.eyebrow) { margin:0 0 22px; color:var(--muted); }
 .dialog-panel .primary-action { margin-top:8px; }
