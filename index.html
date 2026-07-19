@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no">
   <meta name="theme-color" content="#101820">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Tower Battle">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <title>Alien Tower Battle</title>
   <link rel="preload" as="image" href="assets/alien-battlefield.png">
   <link rel="preload" as="image" href="assets/blue-tower.png">
@@ -14,7 +20,7 @@
   <link rel="preload" as="image" href="assets/world2-shield-blue.png">
   <link rel="preload" as="image" href="assets/world2-shield-red.png">
   <link rel="preload" as="image" href="assets/world2-shield-destroyed.png">
-  <link rel="stylesheet" href="style.css?v=20260718">
+  <link rel="stylesheet" href="style.css?v=20260719">
 </head>
 <body>
   <main id="game-shell">
@@ -79,6 +85,7 @@
       <span id="debug-damage">Damage 0</span>
     </aside>
   </main>
-  <script src="game.js?v=20260718j"></script>
+  <script src="game.js?v=20260719"></script>
+  <script src="web-app.js?v=20260719"></script>
 </body>
 </html>
