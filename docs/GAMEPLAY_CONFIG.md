@@ -72,3 +72,14 @@ Do not declare draw merely because no damage has happened during an active shiel
 - Special creature unlock target: 8,000 coins
 
 Do not implement economy in the first vertical slice, but keep reward hooks/events in the match result model.
+
+
+## World 3: Storm Reactor
+- Unlocks after Rift battle 5.
+- Starts with 9 towers per team across 3 lanes.
+- Battles 2-4 add one tower per team, rotating lanes, to a 12-tower cap.
+- A soldier can capture the central reactor and remains there as its vulnerable controller.
+- Reactor control gives that team 25% faster tower fire and reduces shield cooldown by 3 seconds.
+- Storm warnings last 3 seconds. The storm then disables tower fire in one lane for 5 seconds.
+- Storms recur every 18 seconds. Soldiers, shields, and specials continue working during a storm.
+- Medium AI contests the reactor occasionally; Hard AI contests it aggressively.

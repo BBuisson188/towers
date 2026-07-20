@@ -20,7 +20,8 @@
   <link rel="preload" as="image" href="assets/world2-shield-blue.png">
   <link rel="preload" as="image" href="assets/world2-shield-red.png">
   <link rel="preload" as="image" href="assets/world2-shield-destroyed.png">
-  <link rel="stylesheet" href="style.css?v=20260719">
+  <link rel="preload" as="image" href="assets/world3-storm-reactor-background.png">
+  <link rel="stylesheet" href="style.css?v=20260720b">
 </head>
 <body>
   <main id="game-shell">
@@ -43,6 +44,7 @@
       </div>
     </section>
     <section id="main-menu" class="screen-overlay" aria-labelledby="game-title">
+      <button id="test-lock-button" class="icon-button test-lock-button" type="button" aria-label="Unlock testing controls" aria-pressed="false" title="Unlock testing controls"><span id="test-lock-icon" aria-hidden="true">&#128274;</span></button>
       <div class="menu-content">
         <p class="eyebrow">TACTICAL DEFENSE</p>
         <h1 id="game-title">ALIEN TOWER<br>BATTLE</h1>
@@ -59,7 +61,21 @@
           <button class="difficulty" data-difficulty="hard" type="button">Hard</button>
         </div>
         <button id="start-button" class="primary-action" type="button">Start Battle</button>
-        <button id="level-2-button" class="test-level-action" type="button">Level 2</button>
+        <div id="test-level-actions" class="test-level-actions hidden">
+          <button id="level-2-button" class="test-level-action" type="button">Level 2</button>
+          <button id="level-3-button" class="test-level-action" type="button">Level 3</button>
+          <button id="layout-2-button" class="test-level-action layout-level-action" type="button">Place Level 2</button>
+          <button id="layout-3-button" class="test-level-action layout-level-action" type="button">Place Level 3</button>
+        </div>
+      </div>
+    </section>
+    <section id="stage-briefing" class="screen-overlay hidden" aria-labelledby="stage-briefing-title">
+      <div class="stage-briefing-panel">
+        <p id="stage-briefing-kicker" class="eyebrow">WORLD 2</p>
+        <h2 id="stage-briefing-title">The Rift</h2>
+        <div id="stage-feature-list" class="stage-feature-list"></div>
+        <button id="stage-start-button" class="primary-action" type="button">Start Battle</button>
+        <button id="stage-menu-button" class="menu-button" type="button">Main Menu</button>
       </div>
     </section>
     <section id="pause-menu" class="screen-overlay hidden" aria-labelledby="pause-title">
@@ -79,13 +95,25 @@
         <button class="menu-button" type="button">Main Menu</button>
       </div>
     </section>
+    <section id="layout-toolbar" class="hidden" aria-label="Battlefield placement controls">
+      <div class="layout-heading">
+        <strong id="layout-title">LEVEL 3 PLACEMENT</strong>
+        <span id="layout-message">Drag every tower and the reactor into position.</span>
+      </div>
+      <div class="layout-actions">
+        <button id="layout-reset-button" type="button">Reset</button>
+        <button id="layout-copy-button" type="button">Copy Layout</button>
+        <button id="layout-test-button" class="layout-primary" type="button">Test Battle</button>
+        <button id="layout-menu-button" type="button">Menu</button>
+      </div>
+    </section>
     <aside id="debug-panel" class="hidden" aria-label="Battle telemetry">
       <span id="debug-units">Units 6</span>
       <span id="debug-projectiles">Shots 0</span>
       <span id="debug-damage">Damage 0</span>
     </aside>
   </main>
-  <script src="game.js?v=20260719"></script>
+  <script src="game.js?v=20260720k"></script>
   <script src="web-app.js?v=20260719"></script>
 </body>
 </html>
