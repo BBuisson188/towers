@@ -43,6 +43,7 @@ h2 { margin:0 0 12px; font-size:44px; letter-spacing:0; }
 .primary-action { width:100%; min-height:56px; border-color:rgba(52,197,255,.8); background:#167da8; font-size:17px; }
 .test-level-actions { display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-top:9px; }
 .test-level-action { width:100%; }
+.test-level-link { display:grid; place-items:center; min-height:48px; border:1px solid rgba(52,197,255,.65); border-radius:7px; background:rgba(18,31,39,.94); color:var(--ink); font-size:15px; font-weight:700; text-decoration:none; }
 .layout-level-action { border-color:rgba(255,213,106,.55); color:var(--gold); }
 .test-lock-button { position:absolute; z-index:3; top:max(12px,env(safe-area-inset-top)); right:max(12px,env(safe-area-inset-right)); width:48px; min-width:48px; border-color:rgba(255,255,255,.26); font-size:20px; }
 .stage-briefing-panel { width:min(620px,100%); padding:30px; border:1px solid rgba(255,255,255,.2); border-radius:8px; background:var(--panel); }

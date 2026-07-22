@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#071019">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>World 4 - Final Battle</title>
+  <link rel="preload" as="image" href="assets/boss/boss-arena-background.png">
+  <link rel="preload" as="image" href="assets/blue-giant.png">
+  <link rel="preload" as="image" href="assets/red-megalodon.png">
+  <link rel="preload" as="image" href="assets/blue-tower.png">
+  <link rel="preload" as="image" href="assets/red-tower.png">
+  <link rel="preload" as="image" href="assets/boss/giant-slam.png">
+  <link rel="preload" as="image" href="assets/boss/giant-right-arm-destroyed.png">
+  <link rel="stylesheet" href="boss-prototype.css?v=20260721b">
+  <link rel="stylesheet" href="level4.css?v=20260721f">
+</head>
+<body>
+  <main id="boss-lab">
+    <div class="arena-art" aria-hidden="true"></div>
+    <div class="arena-shade" aria-hidden="true"></div>
+
+    <header class="boss-hud">
+      <div class="player-meter"><span id="player-team-label">RED</span><strong id="tower-count">8</strong></div>
+      <div class="boss-title">
+        <span>WORLD 4 - FINAL BATTLE</span>
+        <strong id="boss-name">THE BLUE GIANT</strong>
+      </div>
+      <div class="core-meter" aria-label="Boss core health">
+        <span id="core-label">CORE LOCKED</span>
+        <div><i id="core-fill"></i></div>
+      </div>
+      <button id="pause-button" class="pause-button" type="button" aria-label="Pause game">II</button>
+    </header>
+
+    <section id="arena" class="arena" aria-label="Final boss battle">
+      <div id="boss-alert" class="boss-alert hidden" aria-live="polite"></div>
+      <div id="tower-field" class="tower-field" aria-label="Player towers"></div>
+      <div id="soldier-field" class="soldier-field" aria-label="Player soldiers"></div>
+      <div id="battle-effects" class="battle-effects" aria-hidden="true"></div>
+
+      <div id="boss-stage" class="boss-stage">
+        <div class="boss-shadow" aria-hidden="true"></div>
+        <div class="boss-aura" aria-hidden="true"></div>
+        <div id="boss-visual" class="boss-visual">
+          <img id="boss-idle" class="boss-sprite boss-idle" src="assets/blue-giant.png" alt="Boss">
+          <img id="boss-damaged" class="boss-sprite boss-damaged" src="assets/boss/giant-right-arm-destroyed.png" alt="">
+          <img id="boss-slam" class="boss-sprite boss-slam" src="assets/boss/giant-slam.png" alt="">
+          <div class="impact-flash" aria-hidden="true"></div>
+          <div class="shockwave" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="effects" aria-hidden="true"></div>
+
+          <button class="target-node selected" data-zone="leftFist" style="--x:28%;--y:78%" type="button">
+            <span>QUAKE FIST</span><i><b></b></i>
+          </button>
+          <button class="target-node" data-zone="roar" style="--x:54%;--y:39%" type="button">
+            <span>PRIMAL ROAR</span><i><b></b></i>
+          </button>
+          <button class="target-node" data-zone="spines" style="--x:60%;--y:16%" type="button">
+            <span>CRYSTAL SPINES</span><i><b></b></i>
+          </button>
+          <button class="target-node" data-zone="rightFist" style="--x:82%;--y:25%" type="button">
+            <span>CRYSTAL FIST</span><i><b></b></i>
+          </button>
+          <button id="core-node" class="target-node core-node hidden" data-zone="core" style="--x:54%;--y:53%" type="button">
+            <span>EXPOSED CORE</span><i><b></b></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="boss-controls">
+      <div class="selection-status">
+        <span id="selected-label">TARGET: QUAKE FIST</span>
+        <strong id="selected-state">Select a tower and boss area in either order.</strong>
+      </div>
+      <div class="control-actions">
+        <button id="deploy-button" type="button" disabled>Deploy Soldier</button>
+        <button id="special-button" class="special-button" type="button" disabled>Special Locked</button>
+        <button id="shield-button" type="button" disabled>Shield 4</button>
+      </div>
+    </footer>
+
+    <section id="battle-briefing" class="battle-overlay">
+      <div class="battle-panel">
+        <span class="panel-kicker">WORLD 4</span>
+        <h1 id="briefing-title">The Blue Giant</h1>
+        <div class="feature-list">
+          <p><strong>Four Weapon Systems</strong><span>Destroy each marked area to permanently remove one boss attack.</span></p>
+          <p><strong>Exposed Core</strong><span>The core can only be damaged after all four weapon systems are offline.</span></p>
+          <p><strong>Last Stand</strong><span>Every two towers lost earns another special strike worth 45% of one target's health.</span></p>
+        </div>
+        <button id="start-button" class="primary-button" type="button">Start Final Battle</button>
+        <a href="index.html">Main Menu</a>
+      </div>
+    </section>
+
+    <section id="pause-menu" class="battle-overlay hidden">
+      <div class="battle-panel compact-panel">
+        <span class="panel-kicker">BATTLE SUSPENDED</span>
+        <h1>Paused</h1>
+        <button id="resume-button" class="primary-button" type="button">Resume</button>
+        <a href="index.html">Main Menu</a>
+      </div>
+    </section>
+
+    <section id="result-menu" class="battle-overlay hidden">
+      <div class="battle-panel compact-panel">
+        <span id="result-kicker" class="panel-kicker">FINAL BATTLE COMPLETE</span>
+        <h1 id="result-title">Victory</h1>
+        <p id="result-detail">The boss has fallen.</p>
+        <button id="restart-button" class="primary-button" type="button">Battle Again</button>
+        <a href="index.html">Main Menu</a>
+      </div>
+    </section>
+  </main>
+  <script src="level4.js?v=20260721f"></script>
+  <script src="web-app.js?v=20260719"></script>
+</body>
+</html>

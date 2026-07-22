@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#101820">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Place World 4</title>
+  <link rel="preload" as="image" href="assets/boss/boss-arena-background.png">
+  <link rel="preload" as="image" href="assets/blue-giant.png">
+  <link rel="preload" as="image" href="assets/red-tower.png">
+  <link rel="stylesheet" href="boss-layout.css?v=20260721a">
+</head>
+<body>
+  <main id="layout-app">
+    <div class="arena-art" aria-hidden="true"></div>
+    <header class="layout-hud">
+      <div>
+        <span>WORLD 4 PLACEMENT</span>
+        <strong id="selection-name">BLUE GIANT</strong>
+      </div>
+      <p id="layout-message">Drag the boss and all eight towers into position.</p>
+    </header>
+
+    <section id="layout-stage" aria-label="World 4 battlefield placement">
+      <div id="boss-piece" class="place-piece place-boss selected" data-kind="boss" data-index="0">
+        <img src="assets/blue-giant.png" alt="Blue Giant boss">
+        <i aria-hidden="true"></i>
+      </div>
+      <div id="tower-pieces"></div>
+    </section>
+
+    <footer class="layout-toolbar">
+      <div class="scale-control">
+        <label for="boss-scale">Boss Size</label>
+        <input id="boss-scale" type="range" min="25" max="70" step="1" value="43">
+        <output id="boss-scale-value" for="boss-scale">43%</output>
+      </div>
+      <div class="layout-actions">
+        <button id="reset-button" type="button">Reset</button>
+        <button id="copy-button" type="button">Copy Layout</button>
+        <a href="level4.html?team=red&difficulty=medium">Test Level 4</a>
+        <a href="index.html">Menu</a>
+      </div>
+    </footer>
+  </main>
+  <script src="boss-layout.js?v=20260721b"></script>
+  <script src="web-app.js?v=20260719"></script>
+</body>
+</html>
