@@ -1,9 +1,9 @@
-const CACHE_NAME="tower-battle-v23";
+const CACHE_NAME="tower-battle-v24";
 const GAME_FILES=[
   "./",
   "./index.html",
   "./style.css?v=20260720b",
-  "./game.js?v=20260721n",
+  "./game.js?v=20260723a",
   "./web-app.js?v=20260719",
   "./boss-prototype.css?v=20260721b",
   "./level4.html",
